@@ -25,8 +25,8 @@ main() {
 
       setUpAll(() async {
         configureWTransportForVM();
-        mockService =
-            new PactMockService('PactConsumerDart', 'PactMockService', dir : '~/pacts');
+        mockService = new PactMockService('PactConsumerDart', 'PactMockService',
+            dir: '~/pacts');
 
         // ensure Pact service is purged of interactions
         await mockService.resetSession();
@@ -66,8 +66,8 @@ main() {
 
       setUp(() async {
         configureWTransportForVM();
-        mockService =
-            new PactMockService('PactConsumerDart', 'PactMockService', dir : '~/pacts');
+        mockService = new PactMockService('PactConsumerDart', 'PactMockService',
+            dir: '~/pacts');
 
         // ensure Pact service is purged of interactions
         await mockService.resetSession();
@@ -111,8 +111,8 @@ main() {
 
       setUp(() async {
         configureWTransportForVM();
-        mockService =
-            new PactMockService('PactConsumerDart', 'PactMockService', dir : '~/pacts');
+        mockService = new PactMockService('PactConsumerDart', 'PactMockService',
+            dir: '~/pacts');
 
         // ensure Pact service is purged of interactions
         await mockService.resetSession();

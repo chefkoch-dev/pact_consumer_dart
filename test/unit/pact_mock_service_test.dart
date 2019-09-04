@@ -43,7 +43,7 @@ main() {
 
           mockService = new PactMockService(
               fixture['consumer'], fixture['provider'],
-              host: fixture['host'], dir : '~/pacts');
+              host: fixture['host'], dir: '~/pacts');
         });
 
         test('should use the host option in request', () {
@@ -59,8 +59,8 @@ main() {
 
       group('when no `host` is provided', () {
         setUp(() {
-          Uri uri = Uri
-              .parse('http://127.0.0.1:' + fixture['port'] + '/interactions');
+          Uri uri = Uri.parse(
+              'http://127.0.0.1:' + fixture['port'] + '/interactions');
 
           MockTransports.reset();
           MockTransports.http
@@ -91,7 +91,7 @@ main() {
 
           mockService = new PactMockService(
               fixture['consumer'], fixture['provider'],
-              host: fixture['host'], dir : '~/pacts');
+              host: fixture['host'], dir: '~/pacts');
         });
 
         test('should use the default port, 1234', () {
@@ -110,7 +110,7 @@ main() {
 
           mockService = new PactMockService(
               fixture['consumer'], fixture['provider'],
-              port: port, dir : '~/pacts');
+              port: port, dir: '~/pacts');
         });
         test('should use the provided port', () {
           expect(mockService.resetSession(), completes);
@@ -124,7 +124,7 @@ main() {
       setUp(() {
         mockService = new PactMockService(
             fixture['consumer'], fixture['provider'],
-            host: fixture['host'], dir : '~/pacts');
+            host: fixture['host'], dir: '~/pacts');
       });
 
       group('when there is a bad response', () {
@@ -175,7 +175,7 @@ main() {
         setUp(() {
           mockService = new PactMockService(
               fixture['consumer'], fixture['provider'],
-              host: fixture['host'], dir : '~/pacts');
+              host: fixture['host'], dir: '~/pacts');
         });
 
         test('should return an instance of PactInteraction', () {
@@ -190,7 +190,7 @@ main() {
         setUp(() {
           mockService = new PactMockService(
               fixture['consumer'], fixture['provider'],
-              host: fixture['host'], dir : '~/pacts');
+              host: fixture['host'], dir: '~/pacts');
         });
 
         test('should throw StateError', () {
@@ -209,7 +209,7 @@ main() {
       setUp(() {
         mockService = new PactMockService(
             fixture['consumer'], fixture['provider'],
-            host: fixture['host'], dir : '~/pacts');
+            host: fixture['host'], dir: '~/pacts');
       });
 
       group('when called and there is an interaction staged', () {
@@ -275,7 +275,7 @@ main() {
         writeUri = Uri.parse('http://localhost:1234/pact');
         mockService = new PactMockService(
             fixture['consumer'], fixture['provider'],
-            host: fixture['host'], dir : '~/pacts');
+            host: fixture['host'], dir: '~/pacts');
       });
 
       group('when the interaction is verified and the pact is written', () {

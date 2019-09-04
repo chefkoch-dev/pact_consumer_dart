@@ -11,8 +11,8 @@ main() {
 
       setUpAll(() async {
         configureWTransportForVM();
-        mockService =
-            new PactMockService('PactConsumerDart', 'PactMockService', dir: '~/pacts');
+        mockService = new PactMockService('PactConsumerDart', 'PactMockService',
+            dir: '~/pacts');
 
         // ensure Pact service is purged of interactions
         await mockService.resetSession();
@@ -136,8 +136,8 @@ main() {
 
         group('when used in the interaction response', () {
           test('should send a response with the oracle values', () async {
-            var res = await Http
-                .get(Uri.parse('http://localhost:1234/employees/Jim'));
+            var res = await Http.get(
+                Uri.parse('http://localhost:1234/employees/Jim'));
 
             expect(res.status, equals(200));
 
@@ -154,8 +154,8 @@ main() {
       group('somethingLike', () {
         group('when used in the interaction response', () {
           test('should send a response with the oracle values', () async {
-            var res = await Http
-                .get(Uri.parse('http://localhost:1234/alligators/Mary'));
+            var res = await Http.get(
+                Uri.parse('http://localhost:1234/alligators/Mary'));
 
             expect(res.status, equals(200));
 

@@ -18,8 +18,7 @@ import 'package:w_transport/w_transport.dart';
 
 /// Encapsulates the requests made by [PactMockService] client in order to leverage the Pact Service.
 class PactMockServiceRequests {
-
-  static Map<String,String> _headers = {
+  static Map<String, String> _headers = {
     'X-Pact-Mock-Service': 'true',
     'Content-Type': 'application/json'
   };
