@@ -2,9 +2,7 @@ language: dart
 dart:
   - stable
 script:
-  - npm install
-  - pub get --packages-dir
+  - pub get
   - pub run dart_dev format --check
   - pub run dart_dev analyze
   - pub run dart_dev test --no-integration
-  - pub run dart_dev coverage --no-html

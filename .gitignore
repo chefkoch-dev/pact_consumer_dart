@@ -57,10 +57,6 @@ web/api
 # IDEA project file ignores
 .idea/*
 
-# Should not track the output of code coverage for now
-coverage/
-integrate/pubspec.lock
-
 # Skynet ignores
 skynet.Dockerfile
 test_reports/
@@ -86,4 +82,3 @@ pubspec.lock
 
 # Ignore directories used during contract tests
 /tmp
-/pacts
