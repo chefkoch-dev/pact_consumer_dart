@@ -38,7 +38,7 @@ At the core of the consumer library is the concept of interactions. Interactions
 ### Creating an instance of the PactMockService
 The class constructor for PactMockService accepts a Map of options which, at a minimum, require a port, consumer name, and provider name. Additional properties that can be passed are:
 - host := The host that the Pact service is running on, defaults to `127.0.0.1`
-- dir := The directory in which to write the Pact files, defaults to `/pacts`
+- dir := The directory in which to write the Pact files, defaults to `server settings` (default on server is `/pacts`)
 ```
 PactMockService mockService = new PactMockService({
   'consumer': 'PactConsumerDart',
@@ -83,7 +83,7 @@ For any given interaction received by Pact, the interaction remains unverified u
 ```
 mockService.verifyAndWrite();
 ```
-This will write out all verified interactions as JSON, which will appear in the `/pact` directory by default.
+This will write out all verified interactions as JSON, which will appear in the `/pacts` directory by default.
 
 
 ## Flexible Matching

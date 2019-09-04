@@ -36,7 +36,7 @@ class PactMockService {
     _pactDetails = {
       'consumer': {'name': consumer},
       'provider': {'name': provider},
-      'pact_dir': (dir != null) ? dir : 'pacts'
+      if (dir != null) 'pact_dir': dir
     };
   }
 
