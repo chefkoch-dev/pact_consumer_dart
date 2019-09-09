@@ -2,6 +2,8 @@ language: dart
 dart:
   - stable
 before_script:
+  - gem install bundler
+install:
   - bundle install
 script:
   - pub get
