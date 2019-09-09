@@ -31,11 +31,8 @@ main() {
       group('when `host` is provided', () {
         setUp(() {
           configureWTransportForTest();
-          Uri uri = Uri.parse('http://' +
-              fixture['host'] +
-              ':' +
-              fixture['port'] +
-              '/interactions');
+          Uri uri = Uri.parse(
+              'http://' + fixture['host'] + ':' + fixture['port'] + '/session');
 
           MockTransports.reset();
           MockTransports.http
@@ -59,8 +56,8 @@ main() {
 
       group('when no `host` is provided', () {
         setUp(() {
-          Uri uri = Uri.parse(
-              'http://127.0.0.1:' + fixture['port'] + '/interactions');
+          Uri uri =
+              Uri.parse('http://127.0.0.1:' + fixture['port'] + '/session');
 
           MockTransports.reset();
           MockTransports.http
@@ -83,7 +80,7 @@ main() {
 
       group('when `port` is NOT provided', () {
         setUp(() {
-          Uri uri = Uri.parse('http://${fixture['host']}:1234/interactions');
+          Uri uri = Uri.parse('http://${fixture['host']}:1234/session');
 
           MockTransports.reset();
           MockTransports.http
@@ -102,7 +99,7 @@ main() {
       group('when `port` is provided', () {
         setUp(() {
           var port = '4321';
-          Uri uri = Uri.parse('http://127.0.0.1:$port/interactions');
+          Uri uri = Uri.parse('http://127.0.0.1:$port/session');
 
           MockTransports.reset();
           MockTransports.http
@@ -129,7 +126,7 @@ main() {
 
       group('when there is a bad response', () {
         setUp(() {
-          Uri uri = Uri.parse('http://localhost:1234/interactions');
+          Uri uri = Uri.parse('http://localhost:1234/session');
 
           MockTransports.reset();
 
@@ -149,7 +146,7 @@ main() {
 
       group('when there is a success response', () {
         setUp(() {
-          Uri uri = Uri.parse('http://localhost:1234/interactions');
+          Uri uri = Uri.parse('http://localhost:1234/session');
 
           MockTransports.reset();
 

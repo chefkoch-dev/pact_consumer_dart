@@ -1,8 +1,11 @@
 language: dart
 dart:
   - stable
+before_script:
+  - bundle install
 script:
   - pub get
   - pub run dart_dev format --check
   - pub run dart_dev analyze
   - pub run dart_dev test --no-integration
+  - ./tool/scripts/integration_setup_and_run_task.sh

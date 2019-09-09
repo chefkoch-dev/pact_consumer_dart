@@ -42,8 +42,14 @@ class PactMockServiceRequests {
   }
 
   /// DELETEs all interactions from the Pact Service.
-  static Future deleteSession(String baseUrl) async {
+  static Future deleteInteractions(String baseUrl) async {
     Uri uri = Uri.parse(baseUrl + '/interactions');
+    return Http.delete(uri, headers: _headers);
+  }
+
+  /// DELETEs all session data from the Pact Service.
+  static Future deleteSession(String baseUrl) async {
+    Uri uri = Uri.parse(baseUrl + '/session');
     return Http.delete(uri, headers: _headers);
   }
 }

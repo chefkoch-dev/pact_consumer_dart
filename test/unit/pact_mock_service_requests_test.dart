@@ -105,11 +105,38 @@ main() {
       });
     });
 
-    group('deleteSession', () {
+    group('deleteInteractions', () {
       var fut; // Function Under Test
 
       setUp(() {
         Uri uri = Uri.parse(baseUrl + '/interactions');
+        fut = PactMockServiceRequests.deleteInteractions;
+
+        MockTransports.reset();
+
+        MockResponse mockRes = new MockResponse.ok(body: '[]');
+
+        MockTransports.http.expect('DELETE', uri, respondWith: mockRes);
+      });
+
+      group('when called with valid params', () {
+        test('should return a Response', () async {
+          var res = await fut(baseUrl);
+          expect(res, isA<MockResponse>());
+          expect(res.status, equals(200));
+        });
+      });
+
+      tearDown(() {
+        MockTransports.verifyNoOutstandingExceptions();
+      });
+    });
+
+    group('deleteSession', () {
+      var fut; // Function Under Test
+
+      setUp(() {
+        Uri uri = Uri.parse(baseUrl + '/session');
         fut = PactMockServiceRequests.deleteSession;
 
         MockTransports.reset();

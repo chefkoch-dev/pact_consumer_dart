@@ -9,13 +9,12 @@ NAME="pact"
 
 # Stops the container and removes it
 function stopContainer() {
-  docker stop $NAME &>/dev/null
-  docker rm $NAME &>/dev/null
+  bundle exec pact-mock-service stop --pid-dir=/tmp/contracts/pids &>/dev/null
 }
 
 # Sets up the Pact Service using docker and attempts to validate the service is running correctly
 function setupPact() {
-  if docker run --name $NAME -d -p $HOST:$PORT:$PORT -v /tmp/log:/var/log/pacto -v /tmp/contracts:/opt/contracts madkom/pact-mock-service
+  if bundle exec pact-mock-service start -p 1234 --pact-dir=/tmp/contracts/pacts --pid-dir=/tmp/contracts/pids -l /tmp/log/service.log
   then
 
     if sleep 1 && curl -XDELETE -f -H "X-Pact-Mock-Service: true" $HOST:$PORT/interactions &>/dev/null
