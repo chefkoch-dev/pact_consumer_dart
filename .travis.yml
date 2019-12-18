@@ -2,7 +2,7 @@ language: dart
 dart:
   - stable
 script:
-  - gem install bundler
+  - gem install bundle
   - bundle install
   - pub get
   - pub run dart_dev format --check
