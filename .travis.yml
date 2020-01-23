@@ -2,10 +2,10 @@ language: dart
 dart:
   - stable
 script:
-  - gem install bundle
+  - gem install bundler
   - bundle install
   - pub get
   - pub run dart_dev format --check
   - pub run dart_dev analyze
-  - pub run dart_dev test --no-integration
+  - pub run dart_dev test test/unit
   - ./tool/scripts/integration_setup_and_run_task.sh
