@@ -28,6 +28,7 @@ main() {
       var fut; // Function Under Test
 
       setUp(() {
+        configureWTransportForTest();
         Uri uri = Uri.parse(baseUrl + '/interactions/verification');
         fut = PactMockServiceRequests.getVerification;
 
