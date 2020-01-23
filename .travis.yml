@@ -3,7 +3,7 @@ dart:
   - stable
 script:
   - gem install bundler
-  - bundle install
+  - bundler install
   - pub get
   - pub run dart_dev format --check
   - pub run dart_dev analyze

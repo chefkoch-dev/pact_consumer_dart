@@ -45,6 +45,7 @@ _temp
 id_rsa
 deb
 *.deb
+vendor
 
 # Pub ignores
 .pub
