@@ -40,7 +40,7 @@ function setupPact() {
 setupPact
 
 # Condition executes the integration tests on the dart vm via dart_dev
-if pub run dart_dev test --concurrency=1 --no-pub-serve --no-unit --integration -p vm
+if pub run dart_dev test test/integration --test-args "--concurrency=1"
 then
   echo "Contract Tests Complete!"
   stopContainer
